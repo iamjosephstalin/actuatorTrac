@@ -64,4 +64,15 @@ class VatRateController extends AdminController
 
         return $form;
     }
+    
+    // Override the update operation to handle custom logic
+    public function update($id)
+      {
+          $input = request()->all();
+          if (isset($input['is_default']) && $input['is_default']) {
+            VatRate::where('id', '<>', $id)->update(['is_default' => false]);
+          }
+          $result = parent::update($id);
+          return $result;
+      }
 }
