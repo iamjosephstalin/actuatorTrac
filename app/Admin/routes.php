@@ -12,4 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('settings/reg-settings/currencies', CurrencyController::class);
+    $router->resource('settings/reg-settings/vat-rates', VatRateController::class);
+    $router->resource('settings/reg-settings/units', UnitController::class);
 });
