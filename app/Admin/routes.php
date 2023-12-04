@@ -15,4 +15,5 @@ Route::group([
     $router->resource('settings/reg-settings/currencies', CurrencyController::class);
     $router->resource('settings/reg-settings/vat-rates', VatRateController::class);
     $router->resource('settings/reg-settings/units', UnitController::class);
+    $router->resource('settings/api-keys', ApiKeyController::class);
 });
