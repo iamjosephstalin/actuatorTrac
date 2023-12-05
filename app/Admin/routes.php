@@ -12,9 +12,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-    $router->resource('actuators', ActuatorController::class);
-    $router->resource('alerts', AlertController::class);
-    $router->resource('motion-types', MotionTypeController::class);
-    $router->resource('actuator-models', ActuatorModelController::class);
-    $router->resource('actuator-types', ActuatorTypeController::class);
+    $router->resource('settings/reg-settings/currencies', CurrencyController::class);
+    $router->resource('settings/reg-settings/vat-rates', VatRateController::class);
+    $router->resource('settings/reg-settings/units', UnitController::class);
+    $router->resource('settings/api-keys', ApiKeyController::class);
 });

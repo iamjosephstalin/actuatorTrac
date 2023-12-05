@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMotionTypeTable extends Migration
+class CreateCurrenciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateMotionTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('motion_type', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('currency_name')->unique()->comment('currency name');
+            $table->boolean('is_default')->default(0)->comment('default flag');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +29,6 @@ class CreateMotionTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('motion_type');
+        Schema::dropIfExists('currencies');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActuatorModelTable extends Migration
+class CreateVatRateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateActuatorModelTable extends Migration
      */
     public function up()
     {
-        Schema::create('actuator_model', function (Blueprint $table) {
+        Schema::create('vat_rate', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('vat_rate')->comment('VAT Rate');
+            $table->boolean('is_default')->default(0)->comment('default flag');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +29,6 @@ class CreateActuatorModelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actuator_model');
+        Schema::dropIfExists('vat_rate');
     }
 }
