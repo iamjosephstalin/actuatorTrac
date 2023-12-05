@@ -30,8 +30,8 @@ class ActuatorTypeController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
-        $grid->column('motion_type', __('Motion type'))->label();;
-        $grid->column('actuator_model', __('Actuator model'))->label();;
+        $grid->column('motion_type', __('Motion type'))->label();
+        $grid->column('actuator_model', __('Actuator model'))->label();
         $grid->column('created_at', __('Created at'))->dateFormat('d-M-Y');
         $grid->column('updated_at', __('Updated at'))->dateFormat('d-M-Y');
         // $grid->column('deleted_at', __('Deleted at'));

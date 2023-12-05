@@ -22,4 +22,24 @@ class ActuatorType extends Model
         return $this->belongsToMany(ActuatorModel::class, 'actuator_models_actuator_types', 'actuator_model_id', 'actuator_type_id');
     }
 
+    public function getMotionTypesAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setMotionTypesAttribute($value)
+    {
+        $this->attributes['motion_type'] = implode(',', $value);
+    }
+
+    public function getActuatorModelAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setActuatorModelAttribute($value)
+    {
+        $this->attributes['actuator_model'] = implode(',', $value);
+    }
+
 }
