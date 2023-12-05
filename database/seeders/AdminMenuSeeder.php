@@ -199,6 +199,16 @@ class AdminMenuSeeder extends Seeder
                         'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                         'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                     ],
+                    [
+                        "parent_id" => 13,
+                        "order" => 0,
+                        "title" => "Tags",
+                        "icon" => "icon-angle-right",
+                        "uri" => "settings/tags",
+                        "permission" => '*',
+                        'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                        'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                    ],
             ]);
         }
         Schema::enableForeignKeyConstraints();
